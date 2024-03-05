@@ -980,7 +980,7 @@ def main():
         if len(args) > 2:
             p.error('Too many arguments')
 
-        if file_.startswith('http://') or file_.startswith('https://'):
+        if file_.startswith(('http://', 'https://')):
             baseurl = file_
             j = urllib.urlopen(baseurl)
             data = j.read()
