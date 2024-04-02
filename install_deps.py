@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import subprocess
+from security import safe_command
 
 if sys.version_info[:2] < (2, 7):
-    subprocess.call('pip install unittest2 --use-mirrors', shell=True)
+    safe_command.run(subprocess.call, 'pip install unittest2 --use-mirrors', shell=True)
